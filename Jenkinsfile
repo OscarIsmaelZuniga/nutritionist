@@ -1,7 +1,7 @@
 @Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline')
 
 
-pipeline{
+pipeline {
     agent any
     stages {
         stage('Call Library'){
