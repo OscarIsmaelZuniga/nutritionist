@@ -1,5 +1,3 @@
-@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline')
-
 
 pipeline {
     agent any
