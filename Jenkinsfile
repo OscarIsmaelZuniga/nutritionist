@@ -1,4 +1,6 @@
-node {
+@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline1')
+
+/*node {
     //notify ('Started')
 
     try{
@@ -53,4 +55,4 @@ node{
 
     bat 'docker-compose up -d --build'
 
-}
+}*/
