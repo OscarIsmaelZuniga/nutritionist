@@ -1,5 +1,18 @@
-@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline1')
+@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline')
 
+
+pipeline{
+    agent any
+    stages {
+        stage('Call Library'){
+            steps{
+                script{
+                    helloWorld()
+                }
+            }
+        }
+    }
+}
 /*node {
     //notify ('Started')
 
