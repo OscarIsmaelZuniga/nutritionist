@@ -1,4 +1,4 @@
-//@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline')
+@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline')
 
 
 pipeline {
@@ -7,7 +7,7 @@ pipeline {
         stage('Call Library'){
             steps{
                 script{
-                    echo 'Hello world'//helloWorld()
+                    helloWorld()
                 }
             }
         }
