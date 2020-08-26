@@ -1,4 +1,4 @@
-
+/*
 pipeline {
     agent any
     stages {
@@ -24,7 +24,7 @@ pipeline {
             }
         }
     }
-}
+}*/
 
 echoPipeline{
     message = "this is an echo"
