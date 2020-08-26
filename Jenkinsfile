@@ -1,4 +1,4 @@
-/*
+properties([pipelineTriggers([githubPush()])])
 pipeline {
     agent any
     stages {
@@ -24,11 +24,11 @@ pipeline {
             }
         }
     }
-}*/
-
-echoPipeline{
-    message = "this is an echo"
 }
+
+/*echoPipeline{
+    message = "this is an echo"
+}*/
 /*node {
     //notify ('Started')
 
