@@ -9,6 +9,20 @@ pipeline {
                 }
             }
         }
+        stage('Call Library Function'){
+            steps{
+                script{
+                    helloArgs('Jenkins!')
+                }
+            }
+        }
+        stage('Call Additional Library Functions'){
+            steps{
+                script{
+                    helloArgs.goodbyeWorld('Jenkins')
+                }
+            }
+        }
     }
 }
 /*node {
