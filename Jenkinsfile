@@ -1,35 +1,15 @@
 properties([pipelineTriggers([githubPush()])])
-pipeline {
-    agent any
-    stages {
-        stage('Call Library'){
-            steps{
-                script{
-                    helloWorld()
-                }
-            }
-        }
-        stage('Call Library Function'){
-            steps{
-                script{
-                    helloArgs('Jenkins!')
-                }
-            }
-        }
-        stage('Call Additional Library Functions'){
-            steps{
-                script{
-                    helloArgs.goodbyeWorld('Jenkins')
-                }
-            }
-        }
-    }
-}
+
+@Library('github.com/OscarIsmaelZuniga/demo-shared-pipeline') _
+
+mavenPipeline(branch: "${env.BRANCH_NAME}",
+           checkout: 'true',
+           compilingPackaging: 'true',
+           archival: 'true',
+           stashNode: 'true',
+           deploying: 'true')
 
 
-/*echoPipeline{
-    message = "this is an echo"
-}*/
 /*node {
     //notify ('Started')
 
@@ -38,7 +18,7 @@ pipeline {
         checkout scm
         //git 'https://github.com/OscarIsmaelZuniga/nutritionist.git'
 
-        stage 'compiling, test, packaging'
+        stage 'compiling packaging'
         bat 'mvn clean package'
 
         stage 'archival'
@@ -69,7 +49,7 @@ pipeline {
     }
 
 }
-
+stage name: 'stash node'
 node('windows') {
     bat 'dir'
     bat 'del /S /Q *'
@@ -85,4 +65,38 @@ node{
 
     bat 'docker-compose up -d --build'
 
+}*/
+
+
+/*
+echoPipeline{
+    message = "this is an echo"
+}
+
+
+pipeline {
+    agent any
+    stages {
+        stage('Call Library'){
+            steps{
+                script{
+                    helloWorld()
+                }
+            }
+        }
+        stage('Call Library Function'){
+            steps{
+                script{
+                    helloArgs('Jenkins!')
+                }
+            }
+        }
+        stage('Call Additional Library Functions'){
+            steps{
+                script{
+                    helloArgs.goodbyeWorld('Jenkins')
+                }
+            }
+        }
+    }
 }*/
