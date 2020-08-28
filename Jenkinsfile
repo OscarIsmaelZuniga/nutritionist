@@ -1,6 +1,3 @@
-properties([pipelineTriggers([githubPush()])])
-
-@Library('pipelineLibrary') _
 
 mavenPipeline(branch: "${env.BRANCH_NAME}",
            checkout: 'true',
