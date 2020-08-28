@@ -1,7 +1,7 @@
 
-mavenPipeline(){
-           message = "this is an echo"
-           }
+pipelineLibrary{
+       message = "this is an echo"
+}
 
 
 /*node {
