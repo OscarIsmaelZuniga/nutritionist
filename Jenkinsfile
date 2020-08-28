@@ -1,10 +1,5 @@
 
-mavenPipeline(branch: "${env.BRANCH_NAME}",
-           checkout: 'true',
-           compilingPackaging: 'true',
-           archival: 'true',
-           stashNode: 'true',
-           deploying: 'true'){
+mavenPipeline(){
            message = "this is an echo"
            }
 
