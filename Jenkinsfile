@@ -1,6 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 
-@Library('github.com/OscarIsmaelZuniga/pipelineLibrary') _
+@Library('/pipelineLibrary') _
 
 mavenPipeline(branch: "${env.BRANCH_NAME}",
            checkout: 'true',
