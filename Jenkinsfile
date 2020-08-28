@@ -4,7 +4,9 @@ mavenPipeline(branch: "${env.BRANCH_NAME}",
            compilingPackaging: 'true',
            archival: 'true',
            stashNode: 'true',
-           deploying: 'true')
+           deploying: 'true'){
+           message = "this is an echo"
+           }
 
 
 /*node {
